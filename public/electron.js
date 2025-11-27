@@ -1264,8 +1264,8 @@ async function addSkinToMoveset(params, event) {
     
     if (skinConfig && skinConfig['share-to-added']) {
       for (const [source, targets] of Object.entries(skinConfig['share-to-added'])) {
-        const targetArray = Array.isArray(targets) ? targets : [targets];
-        
+      const targetArray = Array.isArray(targets) ? targets : [targets];
+      
         // Check if any target references the import slot
         const relevantTargets = targetArray.filter(t => t.includes(`/${importSlotId}/`) || t.includes(`/${importSlotId}.`));
         
@@ -1299,10 +1299,10 @@ async function addSkinToMoveset(params, event) {
             if (fs.existsSync(sourcePath)) {
               // Copy source file to target location
               const targetDir = path.dirname(targetPath);
-              if (!fs.existsSync(targetDir)) {
-                fs.mkdirSync(targetDir, { recursive: true });
-              }
-              
+        if (!fs.existsSync(targetDir)) {
+          fs.mkdirSync(targetDir, { recursive: true });
+        }
+        
               // Only copy if target doesn't exist yet
               if (!fs.existsSync(targetPath)) {
                 fs.copyFileSync(sourcePath, targetPath);
@@ -1649,7 +1649,7 @@ async function copyAllSlotFiles(importFolder, modRoot, importSlotId, targetSlotI
         } else if (item.name === importBaseSlotId && importBaseSlotNum !== mainBaseSlotNum) {
           // Skip import's base slot - we're only importing the specific slot
           continue;
-        } else {
+  } else {
           copyRecursive(srcPath, destBaseDir, relativePath);
         }
       } else if (item.isFile()) {
@@ -1711,9 +1711,9 @@ function collectFilesForSlot(baseDir, slotId, results, modRoot) {
 }
 
 function collectAllFilesRecursive(dir, results, modRoot) {
-  const items = fs.readdirSync(dir, { withFileTypes: true });
-  for (const item of items) {
-    const fullPath = path.join(dir, item.name);
+      const items = fs.readdirSync(dir, { withFileTypes: true });
+      for (const item of items) {
+        const fullPath = path.join(dir, item.name);
     if (item.isDirectory()) {
       collectAllFilesRecursive(fullPath, results, modRoot);
     } else if (item.isFile()) {
@@ -3350,14 +3350,14 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
           if (slotsToShift.length > 0) {
             event.sender.send('debug-message', `[DEBUG] Shifting slots UP by 1: ${slotsToShift.join(', ')}`);
             
-            const shiftMapping = {};
+        const shiftMapping = {};
             for (const slotId of slotsToShift) {
-              const oldNum = parseInt(slotId.substring(1));
+          const oldNum = parseInt(slotId.substring(1));
               const newNum = oldNum + 1;
               shiftMapping[slotId] = `c${newNum}`;
-            }
-            event.sender.send('debug-message', `[DEBUG] Shift mapping: ${JSON.stringify(shiftMapping)}`);
-            
+        }
+        event.sender.send('debug-message', `[DEBUG] Shift mapping: ${JSON.stringify(shiftMapping)}`);
+        
             // Shift fighter model/body directories
             for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
               const oldPath = path.join(modelBodyPath, oldSlot);
@@ -3374,10 +3374,10 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
               const modelSubfolders = fs.readdirSync(modelPath, { withFileTypes: true })
                 .filter(d => d.isDirectory() && d.name !== 'body').map(d => d.name);
               for (const subfolder of modelSubfolders) {
-                for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
+        for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
                   const oldPath = path.join(modelPath, subfolder, oldSlot);
                   const newPath = path.join(modelPath, subfolder, newSlot);
-                  if (fs.existsSync(oldPath)) {
+          if (fs.existsSync(oldPath)) {
                     fs.renameSync(oldPath, newPath);
                     event.sender.send('debug-message', `[DEBUG] Moved model/${subfolder}/${oldSlot} -> ${newSlot}`);
                   }
@@ -3388,7 +3388,7 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
             // Shift camera directories
             const cameraPath = path.join(modRoot, 'camera', 'fighter', fighterCodename);
             if (fs.existsSync(cameraPath)) {
-              for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
+        for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
                 const oldCameraPath = path.join(cameraPath, oldSlot);
                 const newCameraPath = path.join(cameraPath, newSlot);
                 if (fs.existsSync(oldCameraPath)) {
@@ -3414,7 +3414,7 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
             // Shift sound directories
             const soundPath = path.join(modRoot, 'sound', 'bank', 'fighter', fighterCodename);
             if (fs.existsSync(soundPath)) {
-              for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
+            for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
                 const oldSoundPath = path.join(soundPath, oldSlot);
                 const newSoundPath = path.join(soundPath, newSlot);
                 if (fs.existsSync(oldSoundPath)) {
@@ -3429,31 +3429,31 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
               const charaFolders = fs.readdirSync(uiBasePath).filter(f => 
                 fs.statSync(path.join(uiBasePath, f)).isDirectory()
               );
-              for (const charaFolder of charaFolders) {
-                const charaPath = path.join(uiBasePath, charaFolder);
+            for (const charaFolder of charaFolders) {
+              const charaPath = path.join(uiBasePath, charaFolder);
                 const charaNum = charaFolder.split('_')[1];
                 for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
                   const oldAlt = parseInt(oldSlot.substring(1)) - baseSlotNum;
                   const newAlt = parseInt(newSlot.substring(1)) - baseSlotNum;
-                  const oldPadded = String(oldAlt).padStart(2, '0');
-                  const newPadded = String(newAlt).padStart(2, '0');
+                const oldPadded = String(oldAlt).padStart(2, '0');
+                const newPadded = String(newAlt).padStart(2, '0');
                   const oldFile = `chara_${charaNum}_${displayName}_${oldPadded}.bntx`;
                   const newFile = `chara_${charaNum}_${displayName}_${newPadded}.bntx`;
                   const oldFilePath = path.join(charaPath, oldFile);
                   const newFilePath = path.join(charaPath, newFile);
                   if (fs.existsSync(oldFilePath)) {
                     fs.renameSync(oldFilePath, newFilePath);
-                    event.sender.send('debug-message', `[DEBUG] Shifted UI: ${oldFile} -> ${newFile}`);
-                  }
-                }
+                  event.sender.send('debug-message', `[DEBUG] Shifted UI: ${oldFile} -> ${newFile}`);
               }
             }
-            
+          }
+        }
+        
             // Shift effect files
-            const effectPath = path.join(modRoot, 'effect', 'fighter', fighterCodename);
-            if (fs.existsSync(effectPath)) {
-              for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
-                const oldFile = `ef_${fighterCodename}_${oldSlot}.eff`;
+        const effectPath = path.join(modRoot, 'effect', 'fighter', fighterCodename);
+        if (fs.existsSync(effectPath)) {
+          for (const [oldSlot, newSlot] of Object.entries(shiftMapping)) {
+            const oldFile = `ef_${fighterCodename}_${oldSlot}.eff`;
                 const newFile = `ef_${fighterCodename}_${newSlot}.eff`;
                 const oldEffectPath = path.join(effectPath, oldFile);
                 const newEffectPath = path.join(effectPath, newFile);
@@ -3683,8 +3683,8 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
             
             if (!markerCopied) {
               event.sender.send('debug-message', `[DEBUG] WARNING: No .marker file found in any existing slot`);
-            }
-          } else {
+                            }
+                          } else {
             event.sender.send('debug-message', `[DEBUG] Skin already has marker file: ${targetMarkerFile}`);
           }
           
@@ -3849,10 +3849,10 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
                 
                 if (isVanillaSource) {
                   event.sender.send('debug-message', `[DEBUG] Preserving vanilla share: ${source}`);
-                } else {
+                    } else {
                   event.sender.send('debug-message', `[DEBUG] Preserving audio share (skin has no audio): ${source}`);
-                }
-              } else {
+                    }
+                  } else {
                 // Materialize the files physically
                 for (const target of relevantTargets) {
                   const adjustedTarget = replaceSlotInPath(target);
@@ -4071,7 +4071,7 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
                 ? configData['share-to-added'][source]
                 : [configData['share-to-added'][source]];
               configData['share-to-added'][source] = [...new Set([...existing, ...targets])];
-            } else {
+                  } else {
               configData['share-to-added'][source] = targets;
             }
           }
@@ -7618,7 +7618,7 @@ function moveSlotFiles(modRoot, slot, disabledFolder, baseSlotNum, fighterCodena
           const disabledSubDir = path.join(disabledFolder, 'fighter', fighterCodename, 'model', subfolder, slot);
           fs.mkdirSync(path.dirname(disabledSubDir), { recursive: true });
           fs.renameSync(subSlotDir, disabledSubDir);
-          if (event) {
+      if (event) {
             event.sender.send('debug-message', `[DEBUG] Moved fighter/model/${subfolder}: ${slot} -> disabled`);
           }
         }

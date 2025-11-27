@@ -401,7 +401,7 @@ export class MovesetCustomizer {
       const testPath = `${baseDir}/chara_${charaNum}`;
       const testExists = await fileExists(testPath);
       if (testExists) {
-        try {
+              try {
           const files = await scanDirectory(testPath);
           const matchingFiles = files.filter(f => {
             const fileName = f.split('/').pop().toLowerCase();
@@ -412,13 +412,13 @@ export class MovesetCustomizer {
             maxFiles = matchingFiles.length;
             bestCharaFolder = `chara_${charaNum}`;
             bestCharaPath = testPath;
-          }
+                }
         } catch (e) {
           // Ignore scan errors
+            }
+          }
         }
-      }
-    }
-    
+
     if (!bestCharaPath) {
       console.log('[DEBUG] No chara folder found with UI files');
       return foundSlots;
@@ -427,30 +427,30 @@ export class MovesetCustomizer {
     console.log(`[DEBUG] Using ${bestCharaFolder} as primary UI source (has ${maxFiles} matching files)`);
 
     // Now scan ONLY the best chara folder for consistency
-    try {
+            try {
       const uiFiles = await scanDirectory(bestCharaPath);
       console.log(`[DEBUG] All files in ${bestCharaPath}:`, uiFiles);
-      
+              
       for (const file of uiFiles) {
-        const fileName = file.split('/').pop();
-        const fileLower = fileName.toLowerCase();
-        if (fileLower.endsWith('.bntx') || fileLower.endsWith('.nutexb')) {
-          const match = fileLower.match(/_(\d{2})\.(bntx|nutexb)$/);
-          if (match) {
-            const altNum = parseInt(match[1]);
-            const slot = `c${baseSlotNum + altNum}`;
-            
+                const fileName = file.split('/').pop();
+                const fileLower = fileName.toLowerCase();
+                if (fileLower.endsWith('.bntx') || fileLower.endsWith('.nutexb')) {
+                  const match = fileLower.match(/_(\d{2})\.(bntx|nutexb)$/);
+                  if (match) {
+                    const altNum = parseInt(match[1]);
+                    const slot = `c${baseSlotNum + altNum}`;
+
             // Only accept files matching the display name
             const expectedPatternBase = `_${this.displayFighterName}_${altNum.toString().padStart(2, '0')}.`;
             
-            if (fileLower.includes(expectedPatternBase)) {
+                      if (fileLower.includes(expectedPatternBase)) {
               foundSlots[slot] = `${bestCharaPath}/${fileName}`;
               console.log(`[DEBUG] Found UI file: ${fileName} -> slot ${slot}`);
-            }
-          }
-        }
-      }
-    } catch (error) {
+                    }
+                  }
+                }
+              }
+            } catch (error) {
       console.error(`[DEBUG] Error scanning UI path: ${error}`);
     }
 
@@ -461,7 +461,7 @@ export class MovesetCustomizer {
       if (!foundSlots[slot]) {
         foundSlots[slot] = `PLACEHOLDER_${slot}`;
         console.log(`[DEBUG] No UI file found for ${slot}, using placeholder`);
-      }
+                }
     }
 
     console.log(`[DEBUG] Total slots found: ${Object.keys(foundSlots).length}`);
@@ -485,8 +485,8 @@ export class MovesetCustomizer {
         }
       } catch (e) {
         // Ignore errors
+        }
       }
-    }
     return slots.sort((a, b) => parseInt(a.substring(1)) - parseInt(b.substring(1)));
   }
 
