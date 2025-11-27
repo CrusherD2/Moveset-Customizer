@@ -6,6 +6,7 @@ import SlotGrid from './components/SlotGrid';
 import StatusBar from './components/StatusBar';
 import ImportModal from './components/ImportModal';
 import ConfirmModal from './components/ConfirmModal';
+import UpdateNotification from './components/UpdateNotification';
 import './App.css';
 
 const { ipcRenderer } = window.require('electron');
@@ -33,6 +34,28 @@ function App() {
   const [importData, setImportData] = useState(null);
   const [confirmModalOpen, setConfirmModalOpen] = useState(false);
   const [progress, setProgress] = useState(null); // { current, total, message }
+  const [updateInfo, setUpdateInfo] = useState(null);
+  
+  // Check for updates on app startup
+  useEffect(() => {
+    const checkForUpdates = async () => {
+      try {
+        const result = await ipcRenderer.invoke('check-for-updates');
+        if (result.hasUpdate) {
+          setUpdateInfo(result);
+          console.log(`[Update] New version available: ${result.latestVersion}`);
+        } else {
+          console.log(`[Update] App is up to date (v${result.currentVersion})`);
+        }
+      } catch (error) {
+        console.log('[Update] Failed to check for updates:', error);
+      }
+    };
+    
+    // Check after a short delay to not slow down app startup
+    const timer = setTimeout(checkForUpdates, 2000);
+    return () => clearTimeout(timer);
+  }, []);
   
   // Listen for progress updates from backend
   useEffect(() => {
@@ -958,6 +981,10 @@ function App() {
 
   return (
     <div className="app">
+      <UpdateNotification 
+        updateInfo={updateInfo} 
+        onDismiss={() => setUpdateInfo(null)} 
+      />
       <Header 
         modDirectory={modDirectory}
         onSelectDirectory={selectModDirectory}

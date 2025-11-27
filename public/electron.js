@@ -1,6 +1,11 @@
-const { app, BrowserWindow, Menu, dialog, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, dialog, ipcMain, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+const https = require('https');
+
+// Current app version
+const APP_VERSION = '1.0.0';
+const GITHUB_REPO = 'CrusherD2/Moveset-Customizer';
 
 let mainWindow;
 
@@ -95,6 +100,90 @@ ipcMain.handle('select-import-folder', async () => {
   }
   return null;
 });
+
+// Update checker IPC handlers
+ipcMain.handle('check-for-updates', async () => {
+  return new Promise((resolve) => {
+    const options = {
+      hostname: 'api.github.com',
+      path: `/repos/${GITHUB_REPO}/releases/latest`,
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Moveset-Customizer'
+      }
+    };
+    
+    const req = https.request(options, (res) => {
+      let data = '';
+      
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      
+      res.on('end', () => {
+        try {
+          if (res.statusCode === 200) {
+            const release = JSON.parse(data);
+            const latestVersion = release.tag_name.replace(/^v/, ''); // Remove 'v' prefix if present
+            const hasUpdate = compareVersions(latestVersion, APP_VERSION) > 0;
+            
+            resolve({
+              hasUpdate,
+              currentVersion: APP_VERSION,
+              latestVersion,
+              releaseUrl: release.html_url,
+              releaseName: release.name,
+              releaseNotes: release.body,
+              downloadUrl: release.assets && release.assets.length > 0 
+                ? release.assets[0].browser_download_url 
+                : release.html_url
+            });
+          } else {
+            console.log(`[Update Check] GitHub API returned status ${res.statusCode}`);
+            resolve({ hasUpdate: false, currentVersion: APP_VERSION, error: 'Could not check for updates' });
+          }
+        } catch (error) {
+          console.log(`[Update Check] Error parsing response: ${error.message}`);
+          resolve({ hasUpdate: false, currentVersion: APP_VERSION, error: error.message });
+        }
+      });
+    });
+    
+    req.on('error', (error) => {
+      console.log(`[Update Check] Request error: ${error.message}`);
+      resolve({ hasUpdate: false, currentVersion: APP_VERSION, error: error.message });
+    });
+    
+    req.setTimeout(10000, () => {
+      req.destroy();
+      resolve({ hasUpdate: false, currentVersion: APP_VERSION, error: 'Request timed out' });
+    });
+    
+    req.end();
+  });
+});
+
+ipcMain.handle('get-app-version', () => {
+  return APP_VERSION;
+});
+
+ipcMain.handle('open-external-url', (event, url) => {
+  shell.openExternal(url);
+});
+
+// Helper function to compare version strings
+function compareVersions(v1, v2) {
+  const parts1 = v1.split('.').map(Number);
+  const parts2 = v2.split('.').map(Number);
+  
+  for (let i = 0; i < Math.max(parts1.length, parts2.length); i++) {
+    const p1 = parts1[i] || 0;
+    const p2 = parts2[i] || 0;
+    if (p1 > p2) return 1;
+    if (p1 < p2) return -1;
+  }
+  return 0;
+}
 
 ipcMain.handle('scan-import-folder', async (event, importFolder) => {
   try {
