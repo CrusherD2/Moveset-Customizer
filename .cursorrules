@@ -1,0 +1,109 @@
+# Moveset Customizer - Cursor Rules
+
+## Project Context
+This is an Electron + React desktop application for managing Super Smash Bros Ultimate moveset mods. The app handles slot management, skin imports, file sharing/deduplication, and config manipulation.
+
+## User Preferences
+- Always apply code changes directly instead of instructing the user
+- Use TRUE dark mode UI (no white backgrounds)
+- Prefer detailed debug logging for troubleshooting
+
+## Code Guidelines
+
+### Slot Naming
+- Vanilla slots: c00-c07 (DO NOT filter these from config!)
+- Custom slots: c08+ (typically c120+ for movesets)
+- Disabled format: `disabled_cXXX_timestamp`
+- Always use regex `/c(\d+)/` to extract slot numbers
+
+### Config Handling Rules
+1. PRESERVE vanilla slot entries (c00-c07) in share-to-added and share-to-vanilla
+2. Binary comparison REQUIRED before creating share entries
+3. Use TEMP_ markers for atomic slot renaming operations
+4. Transitive sharing ONLY for vanilla sources, never custom slots
+
+### File Operations
+- Normalize paths: `.replace(/\\/g, '/')`
+- Check existence before operations: `fs.existsSync()`
+- Clean up empty directories after deletions
+- Use `writeJsonPreserve()` for config writes
+
+### Import Logic
+- SKIP share-to-added entries where import is the SOURCE
+- Import's internal sharing is irrelevant to main mod
+- Only adopt shares where import files share FROM main mod sources
+- Materialize only if file doesn't exist in import folder
+
+### IPC Patterns
+```javascript
+// Backend logging
+event.sender.send('debug-message', `[DEBUG] Message here`);
+
+// Handler pattern
+ipcMain.handle('handler-name', async (event, params) => {
+  try {
+    // ... logic
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+});
+```
+
+### React Patterns
+- Use hooks for state management
+- Refresh cache with `setImageCacheKey(Date.now())`
+- Clear state completely when reloading mod folder
+- Use React Beautiful DnD for drag-and-drop
+
+### CSS Conventions
+```css
+/* Dark theme colors */
+background-color: #1e1e1e;  /* Primary */
+background-color: #2e2e2e;  /* Secondary */
+background-color: #3e3e3e;  /* Tertiary */
+border: 1px solid #404040;  /* Borders */
+color: #ffffff;             /* Primary text */
+color: #cccccc;             /* Secondary text */
+```
+
+## Common Fixes Reference
+
+### Vanilla Entries Being Removed
+```javascript
+const sourceSlotNum = parseInt(sourceSlotMatch[1]);
+const isVanillaSlot = sourceSlotNum <= 7;
+if (!isVanillaSlot && !activeSlotSet.has(sourceSlot)) {
+  continue; // Only skip non-vanilla inactive slots
+}
+```
+
+### Incorrect Transitive Sharing
+```javascript
+// ONLY apply to vanilla sources
+if (!isVanillaSlot) continue;
+```
+
+### Import Leaking Share Entries
+```javascript
+} else if (sourceHasImportSlot) {
+  // SKIP - import's internal shares are irrelevant
+  event.sender.send('debug-message', `[DEBUG] Skipping import's internal share entry`);
+}
+```
+
+## File Reference
+- Backend logic: `public/electron.js`
+- Main React app: `src/App.js`
+- Frontend mod logic: `src/utils/movesetCustomizer.js`
+- Import UI: `src/components/ImportModal.js`
+- Project docs: `PROJECT_GUIDE.md`
+
+## Testing Checklist
+- [ ] Vanilla c00-c07 entries preserved after import
+- [ ] Binary-identical files de-materialized
+- [ ] Non-identical files remain physical
+- [ ] Empty directories cleaned up
+- [ ] Config structure valid JSON
+- [ ] UI previews load correctly
+

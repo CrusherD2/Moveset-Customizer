@@ -1,0 +1,132 @@
+.slot-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.slot-sections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.slot-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #404040;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #404040;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slot-count {
+  background-color: #0078d7;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 24px;
+  text-align: center;
+}
+
+.slot-container {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  min-height: 160px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  background-color: #1e1e1e;
+}
+
+.slot-container.drag-over {
+  background-color: rgba(0, 120, 215, 0.1);
+  border: 2px dashed #0078d7;
+}
+
+.slot-wrapper {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.slot-wrapper.dragging {
+  transform: rotate(5deg);
+  z-index: 1000;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #666666;
+  font-style: italic;
+  min-height: 120px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Scrollbar styling for slot containers */
+.slot-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slot-container::-webkit-scrollbar-track {
+  background: #2e2e2e;
+  border-radius: 4px;
+}
+
+.slot-container::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 4px;
+}
+
+.slot-container::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .slot-section {
+    padding: 12px;
+  }
+  
+  .section-header h2 {
+    font-size: 16px;
+  }
+  
+  .slot-container {
+    gap: 8px;
+    padding: 4px;
+  }
+} 

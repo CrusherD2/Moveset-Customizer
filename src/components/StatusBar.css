@@ -1,0 +1,183 @@
+.status-bar {
+  background-color: #2e2e2e;
+  border-top: 1px solid #404040;
+  padding: 12px 24px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Progress bar overlay */
+.progress-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+  z-index: 10;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.progress-bar-container {
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0078d7, #00a8e8);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.progress-message {
+  color: #cccccc;
+  font-size: 13px;
+}
+
+.progress-percent {
+  color: #0078d7;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.status-left {
+  flex: 1;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.status-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0078d7;
+}
+
+.status-loading .spinner {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.status-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Import button with blocked state - nice effect instead of grayed out */
+.btn-import {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.btn-import-blocked {
+  background-color: #3a3a3a !important;
+  border: 1px dashed #555555 !important;
+  color: #777777 !important;
+  cursor: not-allowed !important;
+}
+
+.btn-import-blocked::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 149, 0, 0.15),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-import-blocked:hover::before {
+  left: 100%;
+}
+
+.btn-import-blocked:hover {
+  background-color: #3a3a3a !important;
+  border-color: #ff9500 !important;
+  color: #ff9500 !important;
+  box-shadow: 0 0 12px rgba(255, 149, 0, 0.25);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .status-bar {
+    padding: 8px 16px;
+  }
+  
+  .status-content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .status-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .status-text {
+    font-size: 12px;
+  }
+} 
