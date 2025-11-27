@@ -253,6 +253,15 @@ const ImportModal = ({ isOpen, importData, onClose, onApply, mainModBaseSlot, en
     
     // Check if importAltNum is valid (including 0!) and targetSlotId exists
     if (!isNaN(importAltNum) && targetSlotId) {
+      // Block dropping on base alt - it cannot be replaced
+      const targetSlotNum = parseInt(targetSlotId.substring(1));
+      if (targetSlotNum === mainModBaseSlot) {
+        console.log(`[ImportModal] Cannot replace base alt ${targetSlotId}, ignoring drop`);
+        setDragOverSlot(null);
+        setDraggingAltNum(null);
+        return;
+      }
+      
       // Check if this target slot is already mapped to another import alt
       const existingMapping = Object.entries(replaceMapping).find(
         ([altNum, target]) => target === targetSlotId && parseInt(altNum) !== importAltNum
@@ -545,11 +554,11 @@ const ImportModal = ({ isOpen, importData, onClose, onApply, mainModBaseSlot, en
                         return (
                           <div
                             key={slot.id}
-                            className={`alt-card-small drop-target ${isTarget ? 'is-target' : ''} ${isDragOver ? 'drag-over' : ''} ${isBaseAlt ? 'base-alt-replaceable' : ''} ${isTakenByOther ? 'slot-taken' : ''}`}
-                            onDragOver={(e) => handleDragOver(e, slot.id)}
+                            className={`alt-card-small drop-target ${isTarget ? 'is-target' : ''} ${isDragOver && !isBaseAlt ? 'drag-over' : ''} ${isBaseAlt ? 'base-alt-blocked' : ''} ${isTakenByOther ? 'slot-taken' : ''}`}
+                            onDragOver={(e) => !isBaseAlt && handleDragOver(e, slot.id)}
                             onDragLeave={handleDragLeave}
                             onDrop={(e) => handleDrop(e, slot.id)}
-                            title={isBaseAlt ? 'Base Alt (can be replaced here)' : (isTakenByOther ? 'Slot already taken by another skin' : undefined)}
+                            title={isBaseAlt ? 'Base Alt - Cannot be replaced' : (isTakenByOther ? 'Slot already taken by another skin' : undefined)}
                           >
                             <div className="alt-preview-small">
                               {mainAltPreviews && mainAltPreviews[slot.id] ? (
