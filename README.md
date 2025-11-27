@@ -83,8 +83,8 @@ mod-folder/
 - [Electron](https://www.electronjs.org/) - Desktop application framework
 - [React](https://reactjs.org/) - UI framework
 - [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) - Drag and drop functionality
-- [ultimate_tex_cli](https://github.com/jam1garern/ultimate_tex_cli) by jam1garern - BNTX to PNG conversion
-- [Reslotter GUI](https://gamebanana.com/tools/7034) by Josaline - Inspiration for slot management
+- [ultimate_tex_cli](https://github.com/jam1garern/ultimate_tex_cli) by jam1garner - BNTX to PNG conversion
+- [Reslotter](https://github.com/CSharpM7/reslotter) by CSharpM7 - Inspiration for slot management and optimization
 
 ### Special Thanks
 
