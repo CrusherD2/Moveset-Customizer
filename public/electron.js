@@ -3628,32 +3628,64 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
           
           // ============================================================
           // STEP A1.6: COPY MARKER FILE (if skin doesn't have one)
+          // Marker files can be named like: .marker, modname.marker, etc.
           // ============================================================
           event.sender.send('debug-message', `[DEBUG] Step A1.6: Checking for .marker file...`);
           
-          // Check if the imported skin has a .marker file in its model/body folder
-          const targetModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body', targetSlotId);
-          const targetMarkerPath = path.join(targetModelBodyPath, '.marker');
+          // Helper to find marker files (any file ending with .marker)
+          const findMarkerFile = (dirPath) => {
+            if (!fs.existsSync(dirPath)) return null;
+            const files = fs.readdirSync(dirPath);
+            return files.find(f => f.toLowerCase().endsWith('.marker')) || null;
+          };
           
-          if (!fs.existsSync(targetMarkerPath)) {
-            // No marker file in imported skin - copy from base slot
-            const baseSlotId = `c${baseSlotNum}`;
-            const baseModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body', baseSlotId);
-            const baseMarkerPath = path.join(baseModelBodyPath, '.marker');
+          const targetModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body', targetSlotId);
+          const targetMarkerFile = findMarkerFile(targetModelBodyPath);
+          
+          event.sender.send('debug-message', `[DEBUG] Target path: ${targetModelBodyPath}`);
+          event.sender.send('debug-message', `[DEBUG] Target marker file: ${targetMarkerFile || 'none'}`);
+          
+          if (!targetMarkerFile) {
+            let markerCopied = false;
             
-            if (fs.existsSync(baseMarkerPath)) {
-              // Ensure target directory exists
-              if (!fs.existsSync(targetModelBodyPath)) {
-                fs.mkdirSync(targetModelBodyPath, { recursive: true });
-              }
+            // Search for a .marker file in ANY existing slot of the main moveset
+            const mainModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body');
+            if (fs.existsSync(mainModelBodyPath)) {
+              const existingSlots = fs.readdirSync(mainModelBodyPath, { withFileTypes: true })
+                .filter(d => d.isDirectory() && /^c\d+$/.test(d.name))
+                .map(d => d.name)
+                .sort((a, b) => parseInt(a.substring(1)) - parseInt(b.substring(1)));
               
-              fs.copyFileSync(baseMarkerPath, targetMarkerPath);
-              event.sender.send('debug-message', `[DEBUG] Copied .marker file from ${baseSlotId} to ${targetSlotId}`);
-            } else {
-              event.sender.send('debug-message', `[DEBUG] No .marker file found in base slot ${baseSlotId}`);
+              event.sender.send('debug-message', `[DEBUG] Searching for .marker in slots: ${existingSlots.join(', ')}`);
+              
+              for (const slotId of existingSlots) {
+                if (slotId === targetSlotId) continue; // Skip target slot
+                
+                const slotPath = path.join(mainModelBodyPath, slotId);
+                const sourceMarkerFile = findMarkerFile(slotPath);
+                
+                if (sourceMarkerFile) {
+                  // Found a marker file - copy it to target
+                  const sourceMarkerPath = path.join(slotPath, sourceMarkerFile);
+                  
+                  if (!fs.existsSync(targetModelBodyPath)) {
+                    fs.mkdirSync(targetModelBodyPath, { recursive: true });
+                  }
+                  
+                  const targetMarkerPath = path.join(targetModelBodyPath, sourceMarkerFile);
+                  fs.copyFileSync(sourceMarkerPath, targetMarkerPath);
+                  event.sender.send('debug-message', `[DEBUG] SUCCESS: Copied ${sourceMarkerFile} from ${slotId} to ${targetSlotId}`);
+                  markerCopied = true;
+                  break;
+                }
+              }
+            }
+            
+            if (!markerCopied) {
+              event.sender.send('debug-message', `[DEBUG] WARNING: No .marker file found in any existing slot`);
             }
           } else {
-            event.sender.send('debug-message', `[DEBUG] Skin already has .marker file`);
+            event.sender.send('debug-message', `[DEBUG] Skin already has marker file: ${targetMarkerFile}`);
           }
           
           // ============================================================
