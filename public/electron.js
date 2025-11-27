@@ -3627,6 +3627,36 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
           event.sender.send('debug-message', `[DEBUG] Copied ${soundFilesCopied} sound files`);
           
           // ============================================================
+          // STEP A1.6: COPY MARKER FILE (if skin doesn't have one)
+          // ============================================================
+          event.sender.send('debug-message', `[DEBUG] Step A1.6: Checking for .marker file...`);
+          
+          // Check if the imported skin has a .marker file in its model/body folder
+          const targetModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body', targetSlotId);
+          const targetMarkerPath = path.join(targetModelBodyPath, '.marker');
+          
+          if (!fs.existsSync(targetMarkerPath)) {
+            // No marker file in imported skin - copy from base slot
+            const baseSlotId = `c${baseSlotNum}`;
+            const baseModelBodyPath = path.join(modRoot, 'fighter', fighterCodename, 'model', 'body', baseSlotId);
+            const baseMarkerPath = path.join(baseModelBodyPath, '.marker');
+            
+            if (fs.existsSync(baseMarkerPath)) {
+              // Ensure target directory exists
+              if (!fs.existsSync(targetModelBodyPath)) {
+                fs.mkdirSync(targetModelBodyPath, { recursive: true });
+              }
+              
+              fs.copyFileSync(baseMarkerPath, targetMarkerPath);
+              event.sender.send('debug-message', `[DEBUG] Copied .marker file from ${baseSlotId} to ${targetSlotId}`);
+            } else {
+              event.sender.send('debug-message', `[DEBUG] No .marker file found in base slot ${baseSlotId}`);
+            }
+          } else {
+            event.sender.send('debug-message', `[DEBUG] Skin already has .marker file`);
+          }
+          
+          // ============================================================
           // STEP A2: COPY UI FILES (special handling for alt numbers)
           // ============================================================
           // UI files are named like: chara_#_displayname_XX.bntx
