@@ -1492,6 +1492,184 @@ async function addSkinToMoveset(params, event) {
     log(`Config entries merged`);
     
     // ========================================================================
+    // STEP 4b: HANDLE MISSING ANIMATIONS & CAMERA FILES
+    // ========================================================================
+    log(`STEP 4b: Checking for missing animations and camera files`);
+    
+    const mainBaseSlotId = `c${baseSlotNum}`;
+    
+    // Check if skin is missing animation files but should have them
+    const skinMotionDir = path.join(modRoot, 'fighter', fighterCodename, 'motion', 'body', targetSlotId);
+    const mainBaseMotionDir = path.join(modRoot, 'fighter', fighterCodename, 'motion', 'body', mainBaseSlotId);
+    
+    // Get animation files that exist in main base
+    const mainBaseAnimFiles = [];
+    if (fs.existsSync(mainBaseMotionDir)) {
+      const files = fs.readdirSync(mainBaseMotionDir);
+      for (const file of files) {
+        if (file.endsWith('.nuanmb')) {
+          mainBaseAnimFiles.push(file);
+        }
+      }
+    }
+    
+    // Check if skin has animation files
+    const skinAnimFiles = [];
+    if (fs.existsSync(skinMotionDir)) {
+      const files = fs.readdirSync(skinMotionDir);
+      for (const file of files) {
+        if (file.endsWith('.nuanmb')) {
+          skinAnimFiles.push(file);
+        }
+      }
+    }
+    
+    // If main base has animations but skin doesn't, share them
+    if (mainBaseAnimFiles.length > 0 && skinAnimFiles.length === 0) {
+      log(`Skin is missing animations, sharing from base ${mainBaseSlotId}`);
+      
+      // Create share entries for animation files
+      for (const animFile of mainBaseAnimFiles) {
+        const sourcePath = `fighter/${fighterCodename}/motion/body/${mainBaseSlotId}/${animFile}`;
+        const targetPath = `fighter/${fighterCodename}/motion/body/${targetSlotId}/${animFile}`;
+        
+        if (!configData['share-to-added']) configData['share-to-added'] = {};
+        if (!configData['share-to-added'][sourcePath]) {
+          configData['share-to-added'][sourcePath] = [];
+        }
+        
+        const targets = Array.isArray(configData['share-to-added'][sourcePath])
+          ? configData['share-to-added'][sourcePath]
+          : [configData['share-to-added'][sourcePath]];
+        
+        if (!targets.includes(targetPath)) {
+          targets.push(targetPath);
+          configData['share-to-added'][sourcePath] = targets;
+          log(`Sharing animation: ${animFile} from ${mainBaseSlotId} to ${targetSlotId}`);
+        }
+      }
+    }
+    
+    // Check for missing camera files
+    const skinCameraDir = path.join(modRoot, 'camera', 'fighter', fighterCodename, targetSlotId);
+    const mainBaseCameraDir = path.join(modRoot, 'camera', 'fighter', fighterCodename, mainBaseSlotId);
+    
+    // Get camera files from main base
+    const mainBaseCameraFiles = [];
+    if (fs.existsSync(mainBaseCameraDir)) {
+      const scanCameraDir = (dir, basePath = '') => {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const relativePath = basePath ? `${basePath}/${item}` : item;
+          if (fs.statSync(fullPath).isDirectory()) {
+            scanCameraDir(fullPath, relativePath);
+          } else {
+            mainBaseCameraFiles.push({ file: item, relativePath, fullPath });
+          }
+        }
+      };
+      scanCameraDir(mainBaseCameraDir);
+    }
+    
+    // Check if skin has camera files
+    let skinHasCameraFiles = false;
+    if (fs.existsSync(skinCameraDir)) {
+      const checkForFiles = (dir) => {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          if (fs.statSync(fullPath).isDirectory()) {
+            if (checkForFiles(fullPath)) return true;
+          } else {
+            return true;
+          }
+        }
+        return false;
+      };
+      skinHasCameraFiles = checkForFiles(skinCameraDir);
+    }
+    
+    // If main base has camera files but skin doesn't, copy them
+    if (mainBaseCameraFiles.length > 0 && !skinHasCameraFiles) {
+      log(`Skin is missing camera files, copying from base ${mainBaseSlotId}`);
+      
+      // Group files by their directory for new-dir-files entries
+      const filesByDir = {};
+      
+      for (const { relativePath, fullPath, file } of mainBaseCameraFiles) {
+        const targetPath = path.join(skinCameraDir, relativePath);
+        const targetDir = path.dirname(targetPath);
+        
+        if (!fs.existsSync(targetDir)) {
+          fs.mkdirSync(targetDir, { recursive: true });
+        }
+        
+        if (!fs.existsSync(targetPath)) {
+          fs.copyFileSync(fullPath, targetPath);
+          log(`Copied camera file: ${relativePath}`);
+          result.filescopied++;
+        }
+        
+        // Track for config entry
+        const relativeDir = path.dirname(relativePath);
+        const configDirKey = relativeDir 
+          ? `camera/fighter/${fighterCodename}/${targetSlotId}/${relativeDir.replace(/\\/g, '/')}`
+          : `camera/fighter/${fighterCodename}/${targetSlotId}`;
+        
+        if (!filesByDir[configDirKey]) {
+          filesByDir[configDirKey] = [];
+        }
+        if (!filesByDir[configDirKey].includes(file)) {
+          filesByDir[configDirKey].push(file);
+        }
+      }
+      
+      // Add new-dir-files entries for camera files
+      if (!configData['new-dir-files']) configData['new-dir-files'] = {};
+      for (const [dirKey, files] of Object.entries(filesByDir)) {
+        if (configData['new-dir-files'][dirKey]) {
+          const existing = Array.isArray(configData['new-dir-files'][dirKey])
+            ? configData['new-dir-files'][dirKey]
+            : [configData['new-dir-files'][dirKey]];
+          configData['new-dir-files'][dirKey] = [...new Set([...existing, ...files])];
+        } else {
+          configData['new-dir-files'][dirKey] = files;
+        }
+        log(`Added camera config entry: ${dirKey} with ${files.length} files`);
+      }
+    }
+    
+    // Check for missing sound files
+    const targetSlotNum = parseInt(targetSlotId.substring(1));
+    const soundBankDir = path.join(modRoot, 'sound', 'bank', 'fighter');
+    const skinSoundFile = path.join(soundBankDir, `se_${fighterCodename}_${targetSlotId}.nus3bank`);
+    const mainBaseSoundFile = path.join(soundBankDir, `se_${fighterCodename}_${mainBaseSlotId}.nus3bank`);
+    
+    // If skin doesn't have sound file but main base does, share it
+    if (!fs.existsSync(skinSoundFile) && fs.existsSync(mainBaseSoundFile)) {
+      log(`Skin is missing sound file, sharing from base ${mainBaseSlotId}`);
+      
+      const sourcePath = `sound/bank/fighter/se_${fighterCodename}_${mainBaseSlotId}.nus3bank`;
+      const targetPath = `sound/bank/fighter/se_${fighterCodename}_${targetSlotId}.nus3bank`;
+      
+      if (!configData['share-to-added']) configData['share-to-added'] = {};
+      if (!configData['share-to-added'][sourcePath]) {
+        configData['share-to-added'][sourcePath] = [];
+      }
+      
+      const targets = Array.isArray(configData['share-to-added'][sourcePath])
+        ? configData['share-to-added'][sourcePath]
+        : [configData['share-to-added'][sourcePath]];
+      
+      if (!targets.includes(targetPath)) {
+        targets.push(targetPath);
+        configData['share-to-added'][sourcePath] = targets;
+        log(`Sharing sound: se_${fighterCodename}_${mainBaseSlotId}.nus3bank to ${targetSlotId}`);
+      }
+    }
+
+    // ========================================================================
     // STEP 5: BINARY COMPARISON & DE-MATERIALIZATION
     // ========================================================================
     log(`STEP 5: Binary comparison for ${targetSlotId} against main moveset`);
