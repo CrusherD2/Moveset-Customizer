@@ -4,7 +4,7 @@ const isDev = require('electron-is-dev');
 const https = require('https');
 
 // Current app version
-const APP_VERSION = '1.0.3';
+const APP_VERSION = '1.0.4';
 const GITHUB_REPO = 'CrusherD2/Moveset-Customizer';
 
 let mainWindow;

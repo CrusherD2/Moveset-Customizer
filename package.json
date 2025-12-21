@@ -1,6 +1,6 @@
 {
   "name": "moveset-customizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Modern GUI for Super Smash Bros Ultimate moveset customization",
   "author": "Cesar",
   "main": "public/electron.js",
@@ -98,4 +98,4 @@
     "electron-builder": "^24.6.4",
     "electron-icon-builder": "^2.0.1"
   }
-}
+} 
