@@ -1838,10 +1838,10 @@ async function addSkinToMoveset(params, event) {
         { dir: 'fighter', prefix: 'se' },
         { dir: 'fighter_voice', prefix: 'vc' }
       ];
-      const soundExts = ['.nus3bank', '.nus3audio'];
+      const soundExts = ['.nus3bank', '.nus3audio', '.tonelabel'];
       
       let soundShared = 0;
-      const soundFilesToRemoveFromNewDirFiles = [];
+      const soundFilesToAddToNewDirFiles = [];
       
       for (const soundType of soundTypes) {
         const soundSubDir = path.join(soundBankDir, soundType.dir);
@@ -1869,27 +1869,32 @@ async function addSkinToMoveset(params, event) {
               targets.push(targetPath);
               configData['share-to-added'][sourcePath] = targets;
               soundShared++;
-              soundFilesToRemoveFromNewDirFiles.push(targetPath);
+              soundFilesToAddToNewDirFiles.push(targetPath);
               log(`Sharing sound: ${soundType.prefix}_${fighterCodename}_${mainBaseSlotId}${ext} -> ${targetSlotId}`);
             }
           }
         }
       }
       
-      // Remove shared sound files from new-dir-files (they don't physically exist)
-      if (soundFilesToRemoveFromNewDirFiles.length > 0 && configData['new-dir-files']) {
-        for (const [key, files] of Object.entries(configData['new-dir-files'])) {
-          if (Array.isArray(files)) {
-            configData['new-dir-files'][key] = files.filter(f => 
-              !soundFilesToRemoveFromNewDirFiles.includes(f.replace(/\\/g, '/'))
-            );
-            // Remove key if no files left
-            if (configData['new-dir-files'][key].length === 0) {
-              delete configData['new-dir-files'][key];
-            }
+      // Add shared sound files to new-dir-files (they need to be listed even if shared)
+      if (soundFilesToAddToNewDirFiles.length > 0) {
+        if (!configData['new-dir-files']) configData['new-dir-files'] = {};
+        const configKey = `fighter/${fighterCodename}/${targetSlotId}`;
+        if (!configData['new-dir-files'][configKey]) {
+          configData['new-dir-files'][configKey] = [];
+        }
+        
+        const existing = Array.isArray(configData['new-dir-files'][configKey])
+          ? configData['new-dir-files'][configKey]
+          : [configData['new-dir-files'][configKey]];
+        
+        for (const soundPath of soundFilesToAddToNewDirFiles) {
+          if (!existing.includes(soundPath)) {
+            existing.push(soundPath);
           }
         }
-        log(`Removed ${soundFilesToRemoveFromNewDirFiles.length} sound file entries from new-dir-files`);
+        configData['new-dir-files'][configKey] = existing;
+        log(`Added ${soundFilesToAddToNewDirFiles.length} sound file entries to new-dir-files`);
       }
       
       if (soundShared > 0) log(`Shared ${soundShared} sound files from base`);
@@ -4793,10 +4798,10 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
               { dir: 'fighter', prefix: 'se' },
               { dir: 'fighter_voice', prefix: 'vc' }
             ];
-            const soundExts = ['.nus3bank', '.nus3audio'];
+            const soundExts = ['.nus3bank', '.nus3audio', '.tonelabel'];
             
             let soundShared = 0;
-            const soundFilesToRemoveFromNewDirFiles = [];
+            const soundFilesToAddToNewDirFiles = [];
             
             for (const soundType of soundTypes) {
               const soundSubDir = path.join(soundBankDir, soundType.dir);
@@ -4824,27 +4829,32 @@ ipcMain.handle('apply-slot-changes', async (event, { modRoot, enabledSlots, disa
                     targets.push(targetPathSound);
                     configData['share-to-added'][sourcePath] = targets;
                     soundShared++;
-                    soundFilesToRemoveFromNewDirFiles.push(targetPathSound);
+                    soundFilesToAddToNewDirFiles.push(targetPathSound);
                     event.sender.send('debug-message', `[DEBUG] Sharing sound: ${soundType.prefix}_${fighterCodename}_${mainBaseSlotId}${ext} -> ${targetSlotId}`);
                   }
                 }
               }
             }
             
-            // Remove shared sound files from new-dir-files (they don't physically exist)
-            if (soundFilesToRemoveFromNewDirFiles.length > 0 && configData['new-dir-files']) {
-              for (const [key, files] of Object.entries(configData['new-dir-files'])) {
-                if (Array.isArray(files)) {
-                  configData['new-dir-files'][key] = files.filter(f => 
-                    !soundFilesToRemoveFromNewDirFiles.includes(f.replace(/\\/g, '/'))
-                  );
-                  // Remove key if no files left
-                  if (configData['new-dir-files'][key].length === 0) {
-                    delete configData['new-dir-files'][key];
-                  }
+            // Add shared sound files to new-dir-files (they need to be listed even if shared)
+            if (soundFilesToAddToNewDirFiles.length > 0) {
+              if (!configData['new-dir-files']) configData['new-dir-files'] = {};
+              const configKey = `fighter/${fighterCodename}/${targetSlotId}`;
+              if (!configData['new-dir-files'][configKey]) {
+                configData['new-dir-files'][configKey] = [];
+              }
+              
+              const existing = Array.isArray(configData['new-dir-files'][configKey])
+                ? configData['new-dir-files'][configKey]
+                : [configData['new-dir-files'][configKey]];
+              
+              for (const soundPath of soundFilesToAddToNewDirFiles) {
+                if (!existing.includes(soundPath)) {
+                  existing.push(soundPath);
                 }
               }
-              event.sender.send('debug-message', `[DEBUG] Removed ${soundFilesToRemoveFromNewDirFiles.length} sound file entries from new-dir-files`);
+              configData['new-dir-files'][configKey] = existing;
+              event.sender.send('debug-message', `[DEBUG] Added ${soundFilesToAddToNewDirFiles.length} sound file entries to new-dir-files`);
             }
             
             if (soundShared > 0) event.sender.send('debug-message', `[DEBUG] Shared ${soundShared} sound files from base`);
