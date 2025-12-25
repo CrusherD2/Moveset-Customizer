@@ -106,8 +106,17 @@ const ImportModal = ({ isOpen, importData, onClose, onApply, mainModBaseSlot, en
         return;
       }
 
-      // Get the import alt that was dragged
-      const draggedAlt = importData.slots[source.index];
+      // Get the FILTERED list of unmapped alts (same filter as used in render)
+      const unmappedAlts = importData.slots.filter(slot => addMapping[slot.altNumber] === undefined);
+      
+      // Get the import alt that was dragged from the FILTERED list
+      const draggedAlt = unmappedAlts[source.index];
+      
+      if (!draggedAlt) {
+        console.error('[ImportModal] Could not find dragged alt at filtered index', source.index);
+        setDraggingAltNum(null);
+        return;
+      }
       
       // Create a visual preview slot for this import
       const previewSlot = {
@@ -123,11 +132,14 @@ const ImportModal = ({ isOpen, importData, onClose, onApply, mainModBaseSlot, en
       newPreviewSlots.splice(destination.index, 0, previewSlot);
       setPreviewSlots(newPreviewSlots);
 
-      // Track the mapping: import alt -> position
-      setAddMapping(prev => ({
-        ...prev,
-        [draggedAlt.altNumber]: destination.index
-      }));
+      // Recalculate ALL import positions based on the new previewSlots order
+      const newMapping = {};
+      newPreviewSlots.forEach((slot, index) => {
+        if (slot.isImportPreview) {
+          newMapping[slot.importAltNumber] = index;
+        }
+      });
+      setAddMapping(newMapping);
       
       setDraggingAltNum(null); // Clear dragging state
     }
@@ -195,24 +207,37 @@ const ImportModal = ({ isOpen, importData, onClose, onApply, mainModBaseSlot, en
       // Don't close modal yet - wait for progress to complete
       // Modal will auto-close when progress reaches 100%
     } else {
-      // In add mode, get alts that have a mapping (insert position)
-      const mappedAlts = importData.slots.filter(slot => addMapping[slot.altNumber] !== undefined);
-      if (mappedAlts.length === 0) {
+      // In add mode, extract the imports in their EXACT order from previewSlots
+      // This ensures the order the user sees is the order they get
+      const orderedImports = previewSlots
+        .filter(slot => slot.isImportPreview)
+        .map(slot => {
+          // Find the original slot data from importData
+          const originalSlot = importData.slots.find(s => s.altNumber === slot.importAltNumber);
+          return originalSlot;
+        })
+        .filter(Boolean); // Filter out any undefined entries
+      
+      if (orderedImports.length === 0) {
         alert('Please drag at least one alt to a drop zone between existing alts');
         return;
       }
       
-      // Sort by insertion position (ascending) to process from bottom to top
-      // This prevents position shifts from affecting earlier insertions
-      mappedAlts.sort((a, b) => (addMapping[b.altNumber] || 0) - (addMapping[a.altNumber] || 0));
+      // Recalculate addMapping based on current previewSlots order (for consistency)
+      const finalAddMapping = {};
+      previewSlots.forEach((slot, index) => {
+        if (slot.isImportPreview) {
+          finalAddMapping[slot.importAltNumber] = index;
+        }
+      });
       
       // Set loading state
       setLoading(true);
       
       onApply({
         mode,
-        alts: mappedAlts,
-        addMapping, // Pass the position mapping
+        alts: orderedImports, // Already in the correct visual order
+        addMapping: finalAddMapping, // Updated position mapping
         replaceMapping: {},
         importData: {
           ...importData,

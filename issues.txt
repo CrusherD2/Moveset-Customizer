@@ -1,0 +1,54 @@
+================================================================================
+Ultimate Config Manager - Issues Export
+Mod Directory: C:/Users/Cesar/Documents/Games/Citron/user/sdmc/ultimate/mods/(Moveset) Z Broly Lite
+Mod Name: (Moveset) Z Broly Lite
+Export Date: 2025-12-20 21:34:16
+================================================================================
+
+ERRORS
+--------------------------------------------------------------------------------
+
+[1] Type: config_file_missing
+    File: sound/bank/fighter/se_ganon_c41.nus3audio
+    Message: File listed in new-dir-files (under 'fighter/ganon/c41') not found in mod and not a share target.
+
+[2] Type: config_file_missing
+    File: sound/bank/fighter/se_ganon_c41.nus3bank
+    Message: File listed in new-dir-files (under 'fighter/ganon/c41') not found in mod and not a share target.
+
+[3] Type: config_file_missing
+    File: sound/bank/fighter_voice/vc_ganon_c41.nus3audio
+    Message: File listed in new-dir-files (under 'fighter/ganon/c41') not found in mod and not a share target.
+
+[4] Type: config_file_missing
+    File: sound/bank/fighter_voice/vc_ganon_c41.nus3bank
+    Message: File listed in new-dir-files (under 'fighter/ganon/c41') not found in mod and not a share target.
+
+================================================================================
+
+WARNINGS
+--------------------------------------------------------------------------------
+No warnings found.
+
+================================================================================
+
+OPTIMIZATIONS
+--------------------------------------------------------------------------------
+
+[1] Type: already_shared
+    Source: fighter/ganon/motion/body/c40/swing.prc
+    Target: fighter/ganon/motion/body/c41/swing.prc
+    Message: 'fighter/ganon/motion/body/c41/swing.prc' is already shared from 'fighter/ganon/motion/body/c40/swing.prc' but exists physically.
+
+[2] Type: already_shared
+    Source: fighter/ganon/motion/body/c40/update.prc
+    Target: fighter/ganon/motion/body/c41/update.prc
+    Message: 'fighter/ganon/motion/body/c41/update.prc' is already shared from 'fighter/ganon/motion/body/c40/update.prc' but exists physically.
+
+================================================================================
+
+Summary:
+  Total Errors: 4
+  Total Warnings: 0
+  Total Optimizations: 2
+================================================================================

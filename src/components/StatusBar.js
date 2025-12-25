@@ -40,14 +40,14 @@ const StatusBar = ({ status, onApplyChanges, onReset, onImportSkins, onDeleteAll
           {hasMod && (
             <>
               {hasDisabledSlots && (
-                <button
-                  className="btn btn-danger"
-                  onClick={onDeleteAllDisabled}
-                  disabled={loading}
-                  title="Permanently delete all disabled skins"
-                >
-                  Delete All Disabled
-                </button>
+              <button
+                className="btn btn-danger"
+                onClick={onDeleteAllDisabled}
+                disabled={loading}
+                title="Permanently delete all disabled skins"
+              >
+                Delete All Disabled
+              </button>
               )}
               <button
                 className={`btn btn-primary btn-import ${hasUnappliedChanges ? 'btn-import-blocked' : ''}`}

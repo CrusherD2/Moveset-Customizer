@@ -570,7 +570,7 @@ function App() {
 
   const confirmDeleteAllDisabled = async () => {
     setConfirmModalOpen(false);
-    
+
     try {
       setLoading(true);
       setStatus('Deleting all disabled slots...');
@@ -646,11 +646,10 @@ function App() {
         
         setStatus(`Adding ${importConfig.alts.length} skins...`);
         
-        // Sort insertions from lowest position to highest (process top-down)
-        // This matches the backend processing order
-        const sortedAlts = [...importConfig.alts].sort((a, b) => 
-          (importConfig.addMapping[a.altNumber] || 0) - (importConfig.addMapping[b.altNumber] || 0)
-        );
+        // Alts are already in the correct visual order from the modal (from previewSlots)
+        // No need to sort - use them as-is
+        const sortedAlts = importConfig.alts;
+        console.log('[DEBUG] Processing alts in order:', sortedAlts.map(a => `Alt ${a.altNumber} at pos ${importConfig.addMapping[a.altNumber]}`));
         
         let currentEnabledSlots = enabledSlots.map(s => s.id);
         const allPendingImports = [];
@@ -771,11 +770,11 @@ function App() {
           if (targetSlotId) {
             const targetIndex = enabledSlots.findIndex(s => s.id === targetSlotId);
             if (targetIndex !== -1) {
-              replacements.push({
-                importAlt: alt,
+            replacements.push({
+              importAlt: alt,
                 targetSlot: targetSlotId,
                 targetIndex: targetIndex
-              });
+            });
             }
           }
         }
@@ -851,9 +850,9 @@ function App() {
             slotMapping: disableSlotMapping,
             pendingImports: [],
             baseSlotNum: customizer.baseSlotNum,
-            fighterCodename: customizer.fighterCodename
-          });
-          
+          fighterCodename: customizer.fighterCodename
+        });
+        
           if (disableResult.errors && disableResult.errors.length > 0) {
             console.error(`[Replace] Error disabling ${targetSlot}:`, disableResult.errors);
             setStatus(`Error disabling ${targetSlot}: ${disableResult.errors.join(', ')}`);

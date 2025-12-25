@@ -1,0 +1,514 @@
+node:electron/js2c/renderer_init:2 Electron Security Warning (Insecure Content-Security-Policy) This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.
+warnAboutInsecureCSP @ node:electron/js2c/renderer_init:2
+App.js:48 [Update] App is up to date (v1.0.3)
+movesetCustomizer.js:28 Setting moveset directory to: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite
+movesetCustomizer.js:66 Creating config_backup.json from original config.json
+movesetCustomizer.js:69 Successfully created config_backup.json
+movesetCustomizer.js:678 Fast analyzing 645 mod files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite...
+movesetCustomizer.js:694 Config exists but not loaded, attempting to load now...
+movesetCustomizer.js:112 Successfully loaded config from: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/config.json
+movesetCustomizer.js:134 [DEBUG] --- Running detectDisplayFighterName ---
+movesetCustomizer.js:165 [DEBUG] Detected display name from UI file 'chara_0_brolyz_00.bntx': brolyz
+movesetCustomizer.js:205 [DEBUG] --- Running detectFighterCodename ---
+movesetCustomizer.js:214 [DEBUG] Checking base fighter directory: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter
+movesetCustomizer.js:242 [DEBUG] Found potential fighter directory: ganon
+movesetCustomizer.js:262 [DEBUG] Found potential codename folders: ganon
+movesetCustomizer.js:266 [DEBUG] Detected single fighter codename: ganon
+movesetCustomizer.js:304 [DEBUG] Final fighterCodename set to: ganon
+movesetCustomizer.js:308 [DEBUG] --- Running detectBaseSlotNumber ---
+movesetCustomizer.js:327 [DEBUG] Checking for slot folders in: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body
+movesetCustomizer.js:331 [DEBUG] Found potential slot directory: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body
+movesetCustomizer.js:340 [DEBUG] Found items in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body: c40,c41,c42,c43,c44,c45,c46,c47
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c40 (slot number: 40)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c41 (slot number: 41)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c42 (slot number: 42)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c43 (slot number: 43)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c44 (slot number: 44)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c45 (slot number: 45)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c46 (slot number: 46)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c47 (slot number: 47)
+movesetCustomizer.js:355 [DEBUG] Detected base slot number from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body: c40
+movesetCustomizer.js:366 [DEBUG] Setting this.baseSlotNum to: 40
+movesetCustomizer.js:372 [DEBUG] Finding UI files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara for display name: brolyz
+movesetCustomizer.js:373 [DEBUG] Base slot number: 40
+movesetCustomizer.js:374 [DEBUG] Fighter codename: ganon
+movesetCustomizer.js:393 [DEBUG] Using base slot number: c40
+movesetCustomizer.js:427 [DEBUG] Using chara_0 as primary UI source (has 8 matching files)
+movesetCustomizer.js:432 [DEBUG] All files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0: (8) ['chara_0_brolyz_00.bntx', 'chara_0_brolyz_01.bntx', 'chara_0_brolyz_02.bntx', 'chara_0_brolyz_03.bntx', 'chara_0_brolyz_04.bntx', 'chara_0_brolyz_05.bntx', 'chara_0_brolyz_06.bntx', 'chara_0_brolyz_07.bntx']
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_00.bntx -> slot c40
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_01.bntx -> slot c41
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_02.bntx -> slot c42
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_03.bntx -> slot c43
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_04.bntx -> slot c44
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_05.bntx -> slot c45
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_06.bntx -> slot c46
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_07.bntx -> slot c47
+movesetCustomizer.js:467 [DEBUG] Total slots found: 8
+movesetCustomizer.js:523 Detected fighter: brolyz, Slots: c40,c41,c42,c43,c44,c45,c46,c47, Disabled slots: 
+movesetCustomizer.js:718 Detected fighter: brolyz, main slot: c40
+movesetCustomizer.js:737 Fast analysis complete for brolyz
+movesetCustomizer.js:742 [DEBUG] Starting loadAltPreviews
+movesetCustomizer.js:770 [DEBUG] Using temp directory: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c40: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 0 from filename: chara_0_brolyz_00.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png (alt 0)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c41: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 1 from filename: chara_0_brolyz_01.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png (alt 1)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c42: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 2 from filename: chara_0_brolyz_02.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png (alt 2)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c43: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 3 from filename: chara_0_brolyz_03.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png (alt 3)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c44: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 4 from filename: chara_0_brolyz_04.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png (alt 4)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c45: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 5 from filename: chara_0_brolyz_05.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png (alt 5)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c46: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 6 from filename: chara_0_brolyz_06.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png (alt 6)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c47: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 7 from filename: chara_0_brolyz_07.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png (alt 7)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:833 [DEBUG] Loading disabled slot previews
+movesetCustomizer.js:844 [DEBUG] No disabled directory found
+movesetCustomizer.js:828 [DEBUG] Loaded 8 alt previews
+App.js:139 Loaded alt previews: {c40: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2/temp_previews/alt_0.png', c41: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2/temp_previews/alt_1.png', c42: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2/temp_previews/alt_2.png', c43: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2/temp_previews/alt_3.png', c44: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2/temp_previews/alt_4.png', …}
+App.js:140 Alt previews keys: (8) ['c40', 'c41', 'c42', 'c43', 'c44', 'c45', 'c46', 'c47']
+ImportModal.js:45 [ImportModal] Loading previews for 8 alts
+ImportModal.js:52 [ImportModal] Converting preview for alt 0 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_00.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_00.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_0.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_0.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_0.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 1 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_01.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_01.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_1.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_1.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_1.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 2 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_02.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_02.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_2.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_2.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_2.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 3 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_03.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_03.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_3.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_3.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_3.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 4 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_04.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_04.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_4.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_4.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_4.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 5 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_05.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_05.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_5.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_5.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_5.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 6 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_06.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_06.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_6.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_6.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_6.png
+ImportModal.js:52 [ImportModal] Converting preview for alt 7 from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_07.bntx
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\node_modules\electron\dist\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking for ultimate_tex_cli at: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Converting import preview: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\backup\(Skin Pack) Super Broly\ui\replace\chara\chara_0\chara_0_brolyz_07.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_7.png
+App.js:17 [DEBUG] Main process message: [DEBUG] Using ultimate_tex_cli: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\ultimate_tex_cli.exe
+App.js:17 [DEBUG] Main process message: [DEBUG] Import preview conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_7.png
+ImportModal.js:56 [ImportModal] Got preview path: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2\temp_previews\import_7.png
+ImportModal.js:63 [ImportModal] Loaded 8 previews: {0: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_0.png', 1: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_1.png', 2: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_2.png', 3: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_3.png', 4: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_4.png', 5: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_5.png', 6: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_6.png', 7: 'C:\\Users\\Cesar\\Documents\\Smash modding\\coding\\Moveset Customizer backup 2\\temp_previews\\import_7.png'}
+App.js:644 Import config (add mode): {mode: 'add', alts: Array(1), addMapping: {…}, replaceMapping: {…}, importData: {…}}
+App.js:645 Add mapping: {0: 1}
+App.js:667 [DEBUG] Alt 0: actualSlotId=c40, calculated=c40, using=c40
+App.js:724 Final enabled slots: (9) ['c40', 'c41', 'c42', 'c43', 'c44', 'c45', 'c46', 'c47', 'c48']
+App.js:725 All slot mappings: {c41: 'c42', c42: 'c43', c43: 'c44', c44: 'c45', c45: 'c46', …}
+App.js:726 All pending imports: [{…}]
+App.js:17 [DEBUG] Main process message: apply-slot-changes handler called
+App.js:17 [DEBUG] Main process message: [DEBUG] Applying slot changes for mod: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite
+App.js:17 [DEBUG] Main process message: [DEBUG] Enabled slots: ["c40","c41","c42","c43","c44","c45","c46","c47","c48"]
+App.js:17 [DEBUG] Main process message: [DEBUG] Disabled slots: []
+App.js:17 [DEBUG] Main process message: [DEBUG] Slot mapping: {"c41":"c42","c42":"c43","c43":"c44","c44":"c45","c45":"c46","c46":"c47","c47":"c48"}
+App.js:17 [DEBUG] Main process message: [DEBUG] Pending imports: 1
+App.js:17 [DEBUG] Main process message: [DEBUG] Processing 1 pending imports...
+App.js:17 [DEBUG] Main process message: [DEBUG] Imports will be processed in order: c41
+App.js:17 [DEBUG] Main process message: [DEBUG] Current slots before imports: c40, c41, c42, c43, c44, c45, c46, c47
+App.js:17 [DEBUG] Main process message: [DEBUG] ===== IMPORTING: c40 -> c41 =====
+App.js:17 [DEBUG] Main process message: [DEBUG] Import slot: c40, Actual folder: c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Step 0: Shifting slots to make room at c41...
+App.js:17 [DEBUG] Main process message: [DEBUG] Shifting slots UP by 1: c47, c46, c45, c44, c43, c42, c41
+ [DEBUG] Main process message: [DEBUG] Shift mapping: {"c47":"c48","c46":"c47","c45":"c46","c44":"c45","c43":"c44","c42":"c43","c41":"c42"}
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c47 -> c48
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c46 -> c47
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c45 -> c46
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c44 -> c45
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c43 -> c44
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c42 -> c43
+ [DEBUG] Main process message: [DEBUG] Moved model/body/c41 -> c42
+ [DEBUG] Main process message: [DEBUG] Moved camera/c47 -> c48
+ [DEBUG] Main process message: [DEBUG] Moved camera/c46 -> c47
+ [DEBUG] Main process message: [DEBUG] Moved camera/c45 -> c46
+ [DEBUG] Main process message: [DEBUG] Moved camera/c44 -> c45
+ [DEBUG] Main process message: [DEBUG] Moved camera/c43 -> c44
+ [DEBUG] Main process message: [DEBUG] Moved camera/c42 -> c43
+ [DEBUG] Main process message: [DEBUG] Moved camera/c41 -> c42
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_07.bntx -> chara_0_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_06.bntx -> chara_0_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_05.bntx -> chara_0_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_04.bntx -> chara_0_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_03.bntx -> chara_0_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_02.bntx -> chara_0_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_0_brolyz_01.bntx -> chara_0_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_07.bntx -> chara_1_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_06.bntx -> chara_1_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_05.bntx -> chara_1_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_04.bntx -> chara_1_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_03.bntx -> chara_1_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_02.bntx -> chara_1_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_1_brolyz_01.bntx -> chara_1_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_07.bntx -> chara_2_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_06.bntx -> chara_2_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_05.bntx -> chara_2_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_04.bntx -> chara_2_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_03.bntx -> chara_2_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_02.bntx -> chara_2_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_2_brolyz_01.bntx -> chara_2_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_07.bntx -> chara_3_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_06.bntx -> chara_3_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_05.bntx -> chara_3_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_04.bntx -> chara_3_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_03.bntx -> chara_3_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_02.bntx -> chara_3_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_3_brolyz_01.bntx -> chara_3_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_07.bntx -> chara_4_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_06.bntx -> chara_4_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_05.bntx -> chara_4_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_04.bntx -> chara_4_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_03.bntx -> chara_4_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_02.bntx -> chara_4_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_4_brolyz_01.bntx -> chara_4_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_07.bntx -> chara_6_brolyz_08.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_06.bntx -> chara_6_brolyz_07.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_05.bntx -> chara_6_brolyz_06.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_04.bntx -> chara_6_brolyz_05.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_03.bntx -> chara_6_brolyz_04.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_02.bntx -> chara_6_brolyz_03.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted UI: chara_6_brolyz_01.bntx -> chara_6_brolyz_02.bntx
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c47.eff -> ef_ganon_c48.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c46.eff -> ef_ganon_c47.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c45.eff -> ef_ganon_c46.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c44.eff -> ef_ganon_c45.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c43.eff -> ef_ganon_c44.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c42.eff -> ef_ganon_c43.eff
+ [DEBUG] Main process message: [DEBUG] Shifted effect: ef_ganon_c41.eff -> ef_ganon_c42.eff
+ [DEBUG] Main process message: [DEBUG] Applied shift to config
+ [DEBUG] Main process message: [DEBUG] Step A: Copying skin files...
+ [DEBUG] Main process message: [DEBUG] Alt numbers: import=00 (from UI, altNumber=0), target=01 (c41), actualSlotId=c40
+2 [DEBUG] Main process message: [DEBUG] Found slot folder: c40 -> copying to c41
+ [DEBUG] Main process message: [DEBUG] Copied 48 files
+ [DEBUG] Main process message: [DEBUG] Step A1.5: Copying sound files...
+ [DEBUG] Main process message: [DEBUG] Copied 0 sound files
+ [DEBUG] Main process message: [DEBUG] Step A1.6: Checking for .marker file...
+ [DEBUG] Main process message: [DEBUG] Target path: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite\fighter\ganon\model\body\c41
+ [DEBUG] Main process message: [DEBUG] Target marker file: brolyz.marker
+ [DEBUG] Main process message: [DEBUG] Skin already has marker file: brolyz.marker
+ [DEBUG] Main process message: [DEBUG] Step A2: Copying UI files...
+ [DEBUG] Main process message: [DEBUG] Import display name: brolyz
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_0_brolyz_00.bntx -> chara_0_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_1_brolyz_00.bntx -> chara_1_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_2_brolyz_00.bntx -> chara_2_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_3_brolyz_00.bntx -> chara_3_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_4_brolyz_00.bntx -> chara_4_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_5_brolyz_00.bntx -> chara_5_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_6_brolyz_00.bntx -> chara_6_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied UI: chara_7_brolyz_00.bntx -> chara_7_brolyz_01.bntx
+ [DEBUG] Main process message: [DEBUG] Copied 8 UI files
+ [DEBUG] Main process message: [DEBUG] Step B: Materializing shared files...
+ [DEBUG] Main process message: [DEBUG] Sound files in import: none
+ [DEBUG] Main process message: [DEBUG] Skin has audio files: false
+ [DEBUG] Main process message: [DEBUG] Using skin's config.json
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/beast/c00/update.prc
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/d04finalairattack.nuanmb
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/d04finalairstart.nuanmb
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/d04finalattack.nuanmb
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/d04finalstart.nuanmb
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/flip.prc
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/ganond/c00/motion_list.bin
+ [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/sword/c00/j01appeallw.nuanmb
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/sword/c00/motion_list.bin
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/ganon/motion/sword/c00/update.prc
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/kirby/motion/copy_ganon_cap/c00/flip.prc
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla share: fighter/kirby/motion/copy_ganon_cap/c00/update.prc
+App.js:17 [DEBUG] Main process message: [DEBUG] Materialized 0 shared files
+App.js:17 [DEBUG] Main process message: [DEBUG] Step C: Merging config entries...
+App.js:17 [DEBUG] Main process message: [DEBUG] Config entries merged
+App.js:17 [DEBUG] Main process message: [DEBUG] Step C2: Checking for missing animations/camera/motion/sword files...
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking special case: isImportingBaseAlt=true
+App.js:17 [DEBUG] Main process message: [DEBUG] Skin pack's base slot is SOURCE for 373 motion share entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Target slot c41 has no animation files, setting up sharing from main base
+App.js:17 [DEBUG] Main process message: [DEBUG] Main base has 373 animation files, creating share entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Added 373 animation share entries from main base
+App.js:17 [DEBUG] Main process message: [DEBUG] Missing files in camera/fighter/ganon, copying 8 from base c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Copied 8 camera files from base
+App.js:17 [DEBUG] Main process message: [DEBUG] Missing files in fighter/ganon/model/sword, sharing 12 from base c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Shared 12 sword model files from base
+App.js:17 [DEBUG] Main process message: [DEBUG] Missing files in fighter/ganon/motion/finalkiblast, sharing 1 from base c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Shared 1 files from motion/finalkiblast
+App.js:17 [DEBUG] Main process message: [DEBUG] Missing files in fighter/ganon/motion/nkiblast, sharing 1 from base c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Shared 1 files from motion/nkiblast
+App.js:17 [DEBUG] Main process message: [DEBUG] Sharing sound: se_ganon_c40.nus3bank -> c41
+App.js:17 [DEBUG] Main process message: [DEBUG] Sharing sound: se_ganon_c40.nus3audio -> c41
+App.js:17 [DEBUG] Main process message: [DEBUG] Sharing sound: vc_ganon_c40.nus3bank -> c41
+App.js:17 [DEBUG] Main process message: [DEBUG] Sharing sound: vc_ganon_c40.nus3audio -> c41
+App.js:17 [DEBUG] Main process message: [DEBUG] Removed 4 sound file entries from new-dir-files
+App.js:17 [DEBUG] Main process message: [DEBUG] Shared 4 sound files from base
+App.js:17 [DEBUG] Main process message: [DEBUG] Step D: Binary comparison against main moveset...
+App.js:17 [DEBUG] Main process message: [DEBUG] Found 54 files in c41 to compare
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: alp_brolyz_003_prm.nutexb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: eye_brolyz_b_col.nutexb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: model.xmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: d04finalgroundstart.nuanmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: d04finalstart.nuanmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win1.kime shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win1.nuanmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win2.kime shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win2.nuanmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win3.kime shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Match: j02win3.nuanmb shares from c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Created 11 share entries, deleted 11 files
+App.js:17 [DEBUG] Main process message: [DEBUG] Removed empty dir: camera\fighter\ganon\c41
+App.js:17 [DEBUG] Main process message: [DEBUG] ===== IMPORT COMPLETE: c41 =====
+App.js:17 [DEBUG] Main process message: [DEBUG] Running cross-alt comparison for c41 against all existing alts
+App.js:17 [DEBUG] Main process message: [DEBUG] Cross-alt comparison: Comparing c41 against other alts
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking 43 files in c41 against 8 other alts
+App.js:17 [DEBUG] Main process message: [DEBUG] Cross-alt comparison found 0 identical files that can be shared
+App.js:17 [DEBUG] Main process message: [DEBUG] c41 has no effect file, copying from base c40
+App.js:17 [DEBUG] Main process message: [DEBUG] Copied effect file: ef_ganon_c40.eff -> ef_ganon_c41.eff
+App.js:17 [DEBUG] Main process message: [DEBUG] Slots in config after import: c40, c41, c42, c43, c44, c45, c46, c47, c48
+App.js:17 [DEBUG] Main process message: [DEBUG] new-dir-infos-base entries after import: 45
+App.js:17 [DEBUG] Main process message: [DEBUG] Wrote config after importing 1 slots
+App.js:17 [DEBUG] Main process message: [DEBUG] Original disabledSlots: []
+App.js:17 [DEBUG] Main process message: [DEBUG] Pre-disabled slots: []
+App.js:17 [DEBUG] Main process message: [DEBUG] Slots to process: []
+App.js:17 [DEBUG] Main process message: [DEBUG] No slot mapping provided, skipping reordering
+App.js:17 [DEBUG] Main process message: [DEBUG] Checking config restoration conditions:
+App.js:17 [DEBUG] Main process message: [DEBUG] slotMapping keys: ["c41","c42","c43","c44","c45","c46","c47"]
+App.js:17 [DEBUG] Main process message: [DEBUG] hasSlotShifts: true
+App.js:17 [DEBUG] Main process message: [DEBUG] disabledSlotsToRestore: []
+App.js:17 [DEBUG] Main process message: [DEBUG] hasDisabledSlots: false
+App.js:17 [DEBUG] Main process message: [DEBUG] Will run config restoration: true
+App.js:17 [DEBUG] Main process message: [DEBUG] Starting config restoration...
+App.js:17 [DEBUG] Main process message: [DEBUG] Has slot shifts: true, Has disabled slots: false
+App.js:17 [DEBUG] Main process message: [DEBUG] Skipping config shifts - already applied during import pre-shift phase
+App.js:17 [DEBUG] Main process message: [DEBUG] Cleaning up redundant sound files from share-to-added targets...
+App.js:17 [DEBUG] Main process message: [DEBUG] Config restoration completed successfully
+App.js:17 [DEBUG] Main process message: [DEBUG] Verifying config against physical files...
+App.js:17 [DEBUG] Main process message: [DEBUG] Scanning physical file structure...
+App.js:17 [DEBUG] Main process message: [DEBUG] Found physical slots: c40, c41, c42, c43, c44, c45, c46, c47, c48
+App.js:17 [DEBUG] Main process message: [DEBUG] Rebuilt new-dir-infos with 45 entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Filtered new-dir-infos-base to 45 entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Cleaned new-dir-files: 30 entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Found 12 vanilla slot (c00-c07) entries in share-to-added before filtering
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/beast/c00/update.prc...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/d04finalairattack.nuanmb...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/d04finalairstart.nuanmb...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/d04finalattack.nuanmb...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/d04finalstart.nuanmb...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/flip.prc...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/ganond/c00/motion_list.bin...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/sword/c00/j01appeallw.nuanmb...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/sword/c00/motion_list.bin...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/ganon/motion/sword/c00/update.prc...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/kirby/motion/copy_ganon_cap/c00/flip.prc...
+App.js:17 [DEBUG] Main process message: [DEBUG] Preserving vanilla slot entry: fighter/kirby/motion/copy_ganon_cap/c00/update.prc...
+App.js:17 [DEBUG] Main process message: [DEBUG] Cleaned share-to-added: 439 entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Cleaned share-to-vanilla: 24 entries
+App.js:17 [DEBUG] Main process message: [DEBUG] Config verification completed
+App.js:17 [DEBUG] Main process message: [DEBUG] Cleaning up empty directories...
+App.js:17 [DEBUG] Main process message: [DEBUG] Removed empty directory: .disabled
+App.js:17 [DEBUG] Main process message: [DEBUG] Removed 1 empty directories
+movesetCustomizer.js:678 Fast analyzing 699 mod files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite...
+movesetCustomizer.js:134 [DEBUG] --- Running detectDisplayFighterName ---
+movesetCustomizer.js:165 [DEBUG] Detected display name from UI file 'chara_0_brolyz_00.bntx': brolyz
+movesetCustomizer.js:205 [DEBUG] --- Running detectFighterCodename ---
+movesetCustomizer.js:214 [DEBUG] Checking base fighter directory: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter
+movesetCustomizer.js:242 [DEBUG] Found potential fighter directory: ganon
+movesetCustomizer.js:262 [DEBUG] Found potential codename folders: ganon
+movesetCustomizer.js:266 [DEBUG] Detected single fighter codename: ganon
+movesetCustomizer.js:304 [DEBUG] Final fighterCodename set to: ganon
+movesetCustomizer.js:308 [DEBUG] --- Running detectBaseSlotNumber ---
+movesetCustomizer.js:327 [DEBUG] Checking for slot folders in: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body
+movesetCustomizer.js:331 [DEBUG] Found potential slot directory: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body
+movesetCustomizer.js:340 [DEBUG] Found items in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body: c40,c41,c42,c43,c44,c45,c46,c47,c48
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c40 (slot number: 40)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c41 (slot number: 41)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c42 (slot number: 42)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c43 (slot number: 43)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c44 (slot number: 44)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c45 (slot number: 45)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c46 (slot number: 46)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c47 (slot number: 47)
+movesetCustomizer.js:346 [DEBUG] Found slot directory: c48 (slot number: 48)
+movesetCustomizer.js:355 [DEBUG] Detected base slot number from C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/fighter/ganon/model/body: c40
+movesetCustomizer.js:366 [DEBUG] Setting this.baseSlotNum to: 40
+movesetCustomizer.js:372 [DEBUG] Finding UI files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara for display name: brolyz
+movesetCustomizer.js:373 [DEBUG] Base slot number: 40
+movesetCustomizer.js:374 [DEBUG] Fighter codename: ganon
+movesetCustomizer.js:393 [DEBUG] Using base slot number: c40
+movesetCustomizer.js:427 [DEBUG] Using chara_0 as primary UI source (has 9 matching files)
+movesetCustomizer.js:432 [DEBUG] All files in C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0: (9) ['chara_0_brolyz_00.bntx', 'chara_0_brolyz_01.bntx', 'chara_0_brolyz_02.bntx', 'chara_0_brolyz_03.bntx', 'chara_0_brolyz_04.bntx', 'chara_0_brolyz_05.bntx', 'chara_0_brolyz_06.bntx', 'chara_0_brolyz_07.bntx', 'chara_0_brolyz_08.bntx']
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_00.bntx -> slot c40
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_01.bntx -> slot c41
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_02.bntx -> slot c42
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_03.bntx -> slot c43
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_04.bntx -> slot c44
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_05.bntx -> slot c45
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_06.bntx -> slot c46
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_07.bntx -> slot c47
+movesetCustomizer.js:448 [DEBUG] Found UI file: chara_0_brolyz_08.bntx -> slot c48
+movesetCustomizer.js:467 [DEBUG] Total slots found: 9
+movesetCustomizer.js:523 Detected fighter: brolyz, Slots: c40,c41,c42,c43,c44,c45,c46,c47,c48, Disabled slots: 
+movesetCustomizer.js:718 Detected fighter: brolyz, main slot: c40
+movesetCustomizer.js:737 Fast analysis complete for brolyz
+movesetCustomizer.js:742 [DEBUG] Starting loadAltPreviews
+movesetCustomizer.js:770 [DEBUG] Using temp directory: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c40: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 0 from filename: chara_0_brolyz_00.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png (alt 0)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_00.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_0.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c41: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 1 from filename: chara_0_brolyz_01.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png (alt 1)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_01.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_1.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c42: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 2 from filename: chara_0_brolyz_02.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png (alt 2)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_02.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_2.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c43: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 3 from filename: chara_0_brolyz_03.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png (alt 3)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_03.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_3.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c44: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 4 from filename: chara_0_brolyz_04.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png (alt 4)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_04.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_4.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c45: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 5 from filename: chara_0_brolyz_05.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png (alt 5)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_05.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_5.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c46: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 6 from filename: chara_0_brolyz_06.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png (alt 6)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_06.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_6.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c47: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 7 from filename: chara_0_brolyz_07.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png (alt 7)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_07.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_7.png
+movesetCustomizer.js:781 [DEBUG] Processing texture for slot c48: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_08.bntx
+movesetCustomizer.js:798 [DEBUG] Extracted alt number 8 from filename: chara_0_brolyz_08.bntx
+movesetCustomizer.js:808 [DEBUG] Converting to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_08.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_8.png (alt 8)
+movesetCustomizer.js:1099 [DEBUG] Converting BNTX to PNG: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_08.bntx -> C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_8.png
+movesetCustomizer.js:1141 [DEBUG] Found ultimate_tex_cli.exe at: ./ultimate_tex_cli.exe
+movesetCustomizer.js:1152 [DEBUG] Using ultimate_tex_cli.exe to convert: C:\Users\Cesar\Documents\Games\Citron\user\sdmc\ultimate\mods\(Moveset) Z Broly Lite/ui/replace/chara/chara_0/chara_0_brolyz_08.bntx
+movesetCustomizer.js:1162 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_8.png
+movesetCustomizer.js:816 [DEBUG] Conversion successful: C:\Users\Cesar\Documents\Smash modding\coding\Moveset Customizer backup 2/temp_previews/alt_8.png
+movesetCustomizer.js:833 [DEBUG] Loading disabled slot previews
+movesetCustomizer.js:844 [DEBUG] No disabled directory found
+movesetCustomizer.js:828 [DEBUG] Loaded 9 alt previews
